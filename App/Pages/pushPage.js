@@ -7,34 +7,34 @@ import {
     Button,
     console
 } from 'react-native';
-//import * as navigator from '../../AppProject/Components/Navigators/Navigator';
+import * as navigator from '../Router/NavigationService';
 
 
 export default class pushPage extends Component {
     static navigationOptions = {
         title: 'pushPage',
         headerStyle: {
-          backgroundColor: '#F34966',
+            backgroundColor: '#F34966',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
-          fontWeight: 'bold',
+            fontWeight: 'bold',
         },
     };
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        
+
         this.state = {
-            dataID : ''
+            dataID: ''
         }
     }
 
-    componentDidMount(){
-        // const { params } = this.props.navigation.state;
-        // this.setState({
-        //     dataID : params.dataID
-        // });
+    componentDidMount() {
+        const { dataID } = this.props.route.params;
+        this.setState({
+            dataID
+        });
     }
 
     render() {
@@ -43,26 +43,26 @@ export default class pushPage extends Component {
                 <Text style={styles.welcome}>
                     跳转
                 </Text>
-                {/* {
-                    this.state.dataID === '' 
-                    ?
-                    <Text>暂无参数从父页面传递进入</Text>
-                    :
-                    <Text>{'传递入参dataID：'+this.state.dataID}</Text>
+                {
+                    this.state.dataID === ''
+                        ?
+                        <Text>暂无参数从父页面传递进入</Text>
+                        :
+                        <Text>{'传递入参dataID：' + this.state.dataID}</Text>
                 }
                 <Button
-                    title='click to run the root block' 
-                    onPress={()=>{
-                        const { params } = this.props.navigation.state;
-                        params.backClock && params.backClock('backData：test');
+                    title='click to run the root block'
+                    onPress={() => {
+                        const { backClock = null } = this.props.route.params;
+                        backClock && backClock('backData：test');
                     }}
                 />
                 <Button
-                    title='goback' 
-                    onPress = {()=>{
+                    title='goback'
+                    onPress={() => {
                         navigator.back(this);
                     }}
-                /> */}
+                />
             </View>
         );
     }

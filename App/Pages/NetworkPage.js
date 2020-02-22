@@ -12,7 +12,7 @@ import {
     Button,
 } from 'react-native';
 
-//import * as demoApi from '../Functions/Network/API/DemoApi';
+import * as demoApi from '../Functions/Network/API/DemoApi';
 import * as UIConfig from '../Config/UIConfig';
 
 export default class NetworkPage extends Component {
@@ -27,18 +27,9 @@ export default class NetworkPage extends Component {
         },
     };
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            networkData: '',
-            requestType: '',
-        }
-    }
-
-    componentDidMount() {
-        //  const { params } = this.props.navigation.state;
-
+    state = {
+        networkData: '',
+        requestType: '',
     }
 
     render() {
@@ -48,61 +39,61 @@ export default class NetworkPage extends Component {
                     {'该部分是网络请求的演示demo。'}
                 </Text>
                 <View style={{ marginTop: 50, marginLeft: 50, marginRight: 50, height: 60, backgroundColor: 'green', width: UIConfig.SCREEN_WIDTH - 100, alignItems: 'center', justifyContent: 'center' }}>
-                    {/* <Button
-                        title='netDemo' 
+                    <Button
+                        title='netDemo'
                         color='white'
-                        onPress={()=>{
+                        onPress={() => {
                             this.getTestFunction();
                         }}
-                    /> */}
+                    />
                 </View>
-                {/* <View style={{marginTop:20,marginLeft:50,marginRight:50,height:60}}>
+                <View style={{ marginTop: 20, marginLeft: 50, marginRight: 50, height: 60 }}>
                     <Button
-                        title='postDemo' 
+                        title='postDemo'
                         color='blue'
-                        onPress={()=>{
+                        onPress={() => {
                             this.getThePostTypeDemoFunction();
                         }}
-                        />
-                </View> */}
-                {/* {
+                    />
+                </View>
+                {
                     this.state.networkData === ''
-                    ?
-                    null
-                    :
-                    <Text style={{textAlign:'center'}}>{'网络请求获取的数据reject\n网络请求类型\n'+this.state.requestType+'\n获得的数据：\n'+this.state.networkData}</Text>
-                } */}
+                        ?
+                        null
+                        :
+                        <Text style={{ textAlign: 'center' }}>{'网络请求获取的数据reject\n网络请求类型\n' + this.state.requestType + '\n获得的数据：\n' + this.state.networkData}</Text>
+                }
             </View>
         );
     }
 
-    // getTestFunction = () =>{
-    //     demoApi.getTheDemoData().then(response=>{
-    //         console.log('net request --->response',JSON.stringify(response));
-    //         this.setState({
-    //             requestType:'GET',
-    //             networkData:JSON.stringify(response)
-    //         });
-    //     }, (error)=>{
-    //         console.log('net request --->error:',JSON.stringify(error));
-    //     }).catch(e=>{
-    //         console.log('net request --->e',JSON.stringify(e));
-    //     });
-    // }
+    getTestFunction = () => {
+        demoApi.getTheDemoData().then(response => {
+            console.log('net request --->response', JSON.stringify(response));
+            this.setState({
+                requestType: 'GET',
+                networkData: JSON.stringify(response)
+            });
+        }, (error) => {
+            console.log('net request --->error:', JSON.stringify(error));
+        }).catch(e => {
+            console.log('net request --->e', JSON.stringify(e));
+        });
+    }
 
-    // getThePostTypeDemoFunction = () =>{
-    //     demoApi.postTheDemoData().then(response=>{
-    //         console.log('net request --->response',JSON.stringify(response));
-    //         this.setState({
-    //             requestType:'POST',
-    //             networkData:JSON.stringify(response)
-    //         });
-    //     }, (error)=>{
-    //         console.log('net request --->error:',JSON.stringify(error));
-    //     }).catch(e=>{
-    //         console.log('net request --->e',JSON.stringify(e));
-    //     });
-    // }
+    getThePostTypeDemoFunction = () => {
+        demoApi.postTheDemoData().then(response => {
+            console.log('net request --->response', JSON.stringify(response));
+            this.setState({
+                requestType: 'POST',
+                networkData: JSON.stringify(response)
+            });
+        }, (error) => {
+            console.log('net request --->error:', JSON.stringify(error));
+        }).catch(e => {
+            console.log('net request --->e', JSON.stringify(e));
+        });
+    }
 }
 
 const styles = StyleSheet.create({
