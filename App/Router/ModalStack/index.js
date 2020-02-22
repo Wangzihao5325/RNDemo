@@ -29,10 +29,27 @@ export default class ModalStack extends Component {
             <Stack.Navigator
                 mode='modal'
                 headerMode='none'
+                /** 透明模式设置 */
                 screenOptions={{
                     gestureEnabled: true,
                     cardStyle: { backgroundColor: 'transparent' },
                     cardOverlayEnabled: true,
+                    /** 淡入淡出设置 */
+                    cardStyleInterpolator: ({ current: { progress } }) => ({
+                        cardStyle: {
+                            opacity: progress.interpolate({
+                                inputRange: [0, 0.5, 0.9, 1],
+                                outputRange: [0, 0.25, 0.7, 1],
+                            }),
+                        },
+                        overlayStyle: {
+                            opacity: progress.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 0.5],
+                                extrapolate: 'clamp',
+                            }),
+                        },
+                    }),
                 }}
             >
                 {
