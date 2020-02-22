@@ -29,6 +29,12 @@ export default class FirstPage extends Component {
                     onPress={() => {
                         this.props.navigation.navigate(PageName.NORMAL_STACK_FLATLIST)
                     }} />
+                <Button
+                    title='跳转1'
+                    style={[styles.button]}
+                    onPress={() => {
+                        this.props.navigation.navigate(PageName.MODAL_WRAPPER)
+                    }} />
                 {/* <Button
                     title='跳转'
                     style={[styles.button]}

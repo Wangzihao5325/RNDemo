@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import InitPage from '../Pages/InitPage';
-import NormalStack from './NormalStack';
+import ModalStack from './ModalStack';
 
 export default class Root extends Component {
 
@@ -21,7 +21,7 @@ export default class Root extends Component {
         if (this.state.initDone) {
             return (
                 <NavigationContainer>
-                    <NormalStack />
+                    <ModalStack />
                 </NavigationContainer>
             );
         } else {
