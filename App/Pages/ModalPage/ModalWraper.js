@@ -14,7 +14,7 @@ export default class ModalWraper extends Component {
                 style={styles.safe}
             >
                 <Text>top</Text>
-                <Text>modal!</Text>
+                <Text>modal wrapper-下拉关闭!</Text>
                 <Text>bottom</Text>
             </SafeAreaView>
         );
