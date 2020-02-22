@@ -19,7 +19,7 @@ const optionArray = [
         options: {
             title: 'first',
             tabBarIcon: ({ focused, color, size }) => {
-                iconSrc = focused ? require('../../resource/Image/icon_me.png') : require('../../resource/Image/icon_default_me.png');
+                let iconSrc = focused ? require('../../resource/Image/icon_me.png') : require('../../resource/Image/icon_default_me.png');
                 return <Image style={{ height: 20, width: 20 }} source={iconSrc} />
             }
         }
@@ -31,7 +31,7 @@ const optionArray = [
         options: {
             title: 'second',
             tabBarIcon: ({ focused, color, size }) => {
-                iconSrc = focused ? require('../../resource/Image/icon_me.png') : require('../../resource/Image/icon_default_me.png');
+                let iconSrc = focused ? require('../../resource/Image/icon_me.png') : require('../../resource/Image/icon_default_me.png');
                 return <Image style={{ height: 20, width: 20 }} source={iconSrc} />
             }
         }
@@ -43,7 +43,7 @@ const optionArray = [
         options: {
             title: 'third',
             tabBarIcon: ({ focused, color, size }) => {
-                iconSrc = focused ? require('../../resource/Image/icon_me.png') : require('../../resource/Image/icon_default_me.png');
+                let iconSrc = focused ? require('../../resource/Image/icon_me.png') : require('../../resource/Image/icon_default_me.png');
                 return <Image style={{ height: 20, width: 20 }} source={iconSrc} />
             }
         }
@@ -55,7 +55,7 @@ const optionArray = [
         options: {
             title: 'fourth',
             tabBarIcon: ({ focused, color, size }) => {
-                iconSrc = focused ? require('../../resource/Image/icon_me.png') : require('../../resource/Image/icon_default_me.png');
+                let iconSrc = focused ? require('../../resource/Image/icon_me.png') : require('../../resource/Image/icon_default_me.png');
                 return <Image style={{ height: 20, width: 20 }} source={iconSrc} />
             }
         }
