@@ -27,7 +27,7 @@ export default class FirstPage extends Component {
                     title='navi service跳转Modal'
                     style={[styles.button]}
                     onPress={() => {
-                        this.props.navigation.navigate(PageName.MODAL_WRAPPER)
+                        navigator.navigate(PageName.MODAL_WRAPPER)
                     }} />
                 <Button
                     title='跳转'

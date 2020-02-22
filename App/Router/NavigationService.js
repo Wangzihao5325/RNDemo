@@ -1,5 +1,4 @@
 import * as React from 'react';
-//import { StackActions, NavigationContext } from '@react-navigation/native';
 
 /** 为无法访问到navigation的地方提供路由能力 */
 export const navigationRef = React.createRef();
@@ -8,32 +7,33 @@ export function navigate(name, params) {
     navigationRef.current?.navigate(name, params);
 }
 
-/** 集中处理路由跳转 */
+/** 集中处理路由跳转 ??函数组件无法使用 */
 export function jump(component, routeName, params) {
     if (!params) {
         params = {};
     }
 
-    let router;
-    if (component && component.props.navigation) {
-        router = component.props.navigation;
+    let navi;
+    let route;
+    if (component && component.props.navigation && component.props.route) {
+        navi = component.props.navigation;
+        route = component.props.route;
     }
 
-    if (router && routeName) {
-        //let data = router.dangerouslyGetState();
-        router.navigate(routeName, params);
-        RecordPagePathData('-to-do-', routeName);
+    if (navi && route && routeName) {
+        navi.navigate(routeName, params);
+        RecordPagePathData(route.name, routeName);
     }
 }
 
 export function back(component) {
-    let router;
+    let navi;
     if (component && component.props.navigation) {
-        router = component.props.navigation;
+        navi = component.props.navigation;
     }
 
-    if (router) {
-        router.goBack();
+    if (navi) {
+        navi.goBack();
     }
 };
 
