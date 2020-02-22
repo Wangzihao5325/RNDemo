@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { navigationRef } from './NavigationService';
 import InitPage from '../Pages/InitPage';
 import ModalStack from './ModalStack';
 
@@ -20,7 +21,7 @@ export default class Root extends Component {
     render() {
         if (this.state.initDone) {
             return (
-                <NavigationContainer>
+                <NavigationContainer ref={navigationRef}>
                     <ModalStack />
                 </NavigationContainer>
             );

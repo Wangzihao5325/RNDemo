@@ -36,7 +36,7 @@ export default class BridgePage extends Component {
     }
 
     componentDidMount(){
-        const { params } = this.props.navigation.state;
+       // const { params } = this.props.navigation.state;
         
     }
 

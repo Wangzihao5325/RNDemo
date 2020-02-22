@@ -37,7 +37,7 @@ export default class NetworkPage extends Component {
     }
 
     componentDidMount() {
-        const { params } = this.props.navigation.state;
+        //  const { params } = this.props.navigation.state;
 
     }
 

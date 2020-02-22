@@ -13,7 +13,7 @@ import {
     Image
 } from 'react-native';
 import PageName from '../../Config/PageName';
-//import * as navigator from '../../Components/Navigators/Navigator';
+import * as navigator from '../../Router/NavigationService';
 
 export default class FirstPage extends Component {
 
@@ -24,23 +24,17 @@ export default class FirstPage extends Component {
                     FisrtPage
                 </Text>
                 <Button
-                    title='跳转'
-                    style={[styles.button]}
-                    onPress={() => {
-                        this.props.navigation.navigate(PageName.NORMAL_STACK_FLATLIST)
-                    }} />
-                <Button
-                    title='跳转1'
+                    title='navi service跳转Modal'
                     style={[styles.button]}
                     onPress={() => {
                         this.props.navigation.navigate(PageName.MODAL_WRAPPER)
                     }} />
-                {/* <Button
+                <Button
                     title='跳转'
                     style={[styles.button]}
                     onPress={() => {
                         console.log('跳转PushPage');
-                        navigator.jump(this, PageName.PAGE_PUSH, {
+                        navigator.jump(this, PageName.NORMAL_STACK_PUSH, {
                             dataID: '123456',
                             backClock: (backData = '') => {
                                 console.log('参数block的回调执行，参数：', backData);
@@ -52,7 +46,7 @@ export default class FirstPage extends Component {
                     style={[styles.button]}
                     onPress={() => {
                         console.log('跳转BridgePage');
-                        navigator.jump(this, PageName.PAGE_BRIDGE);
+                        navigator.jump(this, PageName.NORMAL_STACK_BRIDGE);
                     }}
                 />
                 <Button
@@ -60,7 +54,7 @@ export default class FirstPage extends Component {
                     style={[styles.button]}
                     onPress={() => {
                         console.log('跳转NetworkPage');
-                        navigator.jump(this, PageName.PAGE_NETWORK);
+                        navigator.jump(this, PageName.NORMAL_STACK_NETWORK);
                     }}
                 />
                 <Button
@@ -68,7 +62,7 @@ export default class FirstPage extends Component {
                     style={[styles.button]}
                     onPress={() => {
                         console.log('跳转ToastPage');
-                        navigator.jump(this, PageName.PAGE_TOAST);
+                        navigator.jump(this, PageName.NORMAL_STACK_TOAST);
                     }}
                 />
                 <Button
@@ -76,9 +70,9 @@ export default class FirstPage extends Component {
                     style={[styles.button]}
                     onPress={() => {
                         console.log('跳转FlatListPage');
-                        navigator.jump(this, PageName.PAGE_FLATLIST);
+                        navigator.jump(this, PageName.NORMAL_STACK_FLATLIST);
                     }}
-                /> */}
+                />
             </View>
         );
     }

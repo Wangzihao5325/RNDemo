@@ -31,10 +31,10 @@ export default class pushPage extends Component {
     }
 
     componentDidMount(){
-        const { params } = this.props.navigation.state;
-        this.setState({
-            dataID : params.dataID
-        });
+        // const { params } = this.props.navigation.state;
+        // this.setState({
+        //     dataID : params.dataID
+        // });
     }
 
     render() {

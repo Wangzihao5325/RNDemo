@@ -13,9 +13,9 @@ export default class ModalWraper extends Component {
             <SafeAreaView
                 style={styles.safe}
             >
-                <Text>top</Text>
-                <Text>modal wrapper-下拉关闭!</Text>
-                <Text>bottom</Text>
+                <Text style={{ color: 'white' }}>top</Text>
+                <Text style={{ color: 'white' }}>modal wrapper-下拉关闭!</Text>
+                <Text style={{ color: 'white' }}>bottom</Text>
             </SafeAreaView>
         );
     }
