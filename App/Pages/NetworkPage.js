@@ -14,6 +14,7 @@ import {
 
 import * as demoApi from '../Functions/Network/API/DemoApi';
 import * as UIConfig from '../Config/UIConfig';
+import * as Test from '../Functions/Network/ApiTest';
 
 export default class NetworkPage extends Component {
     static navigationOptions = {
@@ -55,6 +56,13 @@ export default class NetworkPage extends Component {
                             this.getThePostTypeDemoFunction();
                         }}
                     />
+                    <Button
+                        title='_test'
+                        color='green'
+                        onPress={() => {
+                            this._pending();
+                        }}
+                    />
                 </View>
                 {
                     this.state.networkData === ''
@@ -65,6 +73,16 @@ export default class NetworkPage extends Component {
                 }
             </View>
         );
+    }
+
+    _pending = async () => {
+        let aaa = await demoApi.getTheDemoDataByAsync().catch((error) => {
+            console.log(error);
+        });
+        this.setState({
+            requestType: 'GET',
+            networkData: JSON.stringify(aaa)
+        });
     }
 
     getTestFunction = () => {

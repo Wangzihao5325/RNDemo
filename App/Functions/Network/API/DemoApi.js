@@ -1,21 +1,30 @@
-import {post, get} from '../ApiHelper'
+import { post, get } from '../ApiHelper';
+import { get as testGet } from '../ApiTest';
 import Network from '../../../Config/Network';
 
 /*** 
  * demo data request by get
 */
-export const getTheDemoData = () =>{
+export const getTheDemoData = () => {
     let promise = get({
-        url:Network.TEST_MOVIE_URL
+        url: Network.TEST_MOVIE_URL
     });
 
     return promise;
 }
 
-export const postTheDemoData = () =>{
+export const getTheDemoDataByAsync = async () => {
+    let promise = await testGet({
+        url: Network.TEST_MOVIE_URL
+    });
+
+    return promise;
+}
+
+export const postTheDemoData = () => {
     let promise = post({
-        url:Network.TEST_POST_URL,
-        body:{
+        url: Network.TEST_POST_URL,
+        body: {
             firstParam: 'yourValue',
             secondParam: 'yourOtherValue'
         }
