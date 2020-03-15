@@ -7,7 +7,7 @@ import {
     Image
 } from 'react-native';
 import {SCREEN_WIDTH,SCREEN_HEIGHT} from '../../Config/UIConfig';
-//import CustomerSwiper from '../../Components/Component/CustomeSwiper';
+import CustomerSwiper from '../../Components/Component/CustomeSwiper';
 
 let testData = [
     {imageUrl:'http://b.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf233e9732cb27eca8064388ffc.jpg'},
@@ -16,28 +16,28 @@ let testData = [
 
 export default class SecondPage extends Component {
     /** tabbar的icon设置 */
-    // static navigationOptions = {
-    //     showIcon: true,
-    //     tabBarIcon : ({focused})=>{
-    //         if(focused){
-    //             return (
-    //                 <Image style={styles.tabBarIcon} source={require('../../resource/Image/icon_me.png')}/>
-    //         );
-    //         }else{
-    //             return (
-    //                 <Image style={styles.tabBarIcon} source={require('../../resource/Image/icon_default_me.png')}/>
-    //         );
-    //         }
+    static navigationOptions = {
+        showIcon: true,
+        tabBarIcon : ({focused})=>{
+            if(focused){
+                return (
+                    <Image style={styles.tabBarIcon} source={require('../../resource/Image/icon_me.png')}/>
+            );
+            }else{
+                return (
+                    <Image style={styles.tabBarIcon} source={require('../../resource/Image/icon_default_me.png')}/>
+            );
+            }
             
-    //     }
-    // }
+        }
+    }
 
     render() {
         return (
             <View style={styles.container}>
-                {/* <View style={{width:SCREEN_WIDTH,height:SCREEN_WIDTH * 360 / 750}}>
+                <View style={{width:SCREEN_WIDTH,height:SCREEN_WIDTH * 360 / 750}}>
                     <CustomerSwiper super={this} bannerData={testData}/>
-                </View> */}
+                </View>
                 <Text style={styles.welcome}>
                     第二页
                 </Text>

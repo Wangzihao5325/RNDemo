@@ -6,8 +6,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-//import { Toast } from '../Components/Toast/Toast';
-//import { Loading } from '../Components/Toast/Loading';
+import { Toast } from '../Components/Toast/Toast';
+import { Loading } from '../Components/Toast/Loading';
 import * as UIConfig from '../Config/UIConfig';
 
 export default class pushPage extends Component {
@@ -31,17 +31,17 @@ export default class pushPage extends Component {
   }
 
   componentDidMount() {
-    // const { params } = this.props.navigation.state;
-    // this.setState({
-    //   dataID: params.dataID
-    // });
+    const { params } = this.props.route.params;
+    this.setState({
+      dataID: params.dataID
+    });
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Toast</Text>
-        {/* <TouchableOpacity
+        <TouchableOpacity
           style={styles.text}
           onPress={() => this.toast('show')}
         >
@@ -102,51 +102,51 @@ export default class pushPage extends Component {
           onPress={() => this.hud('hidden')}
         >
           <Text>hiddenHud</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
 
       </View>
     );
   }
 
-  // toast(type) {
-  //     switch (type) {
-  //       case 'show':
-  //         Toast.show('这是show类型')
-  //         break
-  //       case 'showLong':
-  //         Toast.showLong('这是showLong类型')
-  //         break
-  //       case 'showSuccess':
-  //         Toast.showSuccess('这是showSuccess类型')
-  //         break
-  //       case 'showSuccessCallback':
-  //         Toast.showSuccess('这是showSuccessCallback类型', () => alert('回调成功！'))
-  //         break
-  //       case 'showLongSuccess':
-  //         Toast.showLongSuccess('这是showLongSuccess类型')
-  //         break
-  //       case 'showLongSuccessCallback':
-  //         Toast.showLongSuccess('这是showLongSuccessCallback类型', () => alert('回调成功！'))
-  //         break
-  //       case 'showWarning':
-  //         Toast.showWarning('这是showWarning类型')
-  //         break
-  //       case 'showError':
-  //         Toast.showError('这是showError类型')
-  //         break
-  //     }
-  // }
+  toast(type) {
+      switch (type) {
+        case 'show':
+          Toast.show('这是show类型')
+          break
+        case 'showLong':
+          Toast.showLong('这是showLong类型')
+          break
+        case 'showSuccess':
+          Toast.showSuccess('这是showSuccess类型')
+          break
+        case 'showSuccessCallback':
+          Toast.showSuccess('这是showSuccessCallback类型', () => alert('回调成功！'))
+          break
+        case 'showLongSuccess':
+          Toast.showLongSuccess('这是showLongSuccess类型')
+          break
+        case 'showLongSuccessCallback':
+          Toast.showLongSuccess('这是showLongSuccessCallback类型', () => alert('回调成功！'))
+          break
+        case 'showWarning':
+          Toast.showWarning('这是showWarning类型')
+          break
+        case 'showError':
+          Toast.showError('这是showError类型')
+          break
+      }
+  }
 
-  // hud(type) {
-  //     if (type === 'show') {
-  //       Loading.show()
-  //       setTimeout(function () {
-  //         Loading.hidden()
-  //       }, 5000)
-  //     } else {
-  //       Loading.hidden()
-  //     }
-  // }
+  hud(type) {
+      if (type === 'show') {
+        Loading.show()
+        setTimeout(function () {
+          Loading.hidden()
+        }, 5000)
+      } else {
+        Loading.hidden()
+      }
+  }
 }
 
 const styles = StyleSheet.create({

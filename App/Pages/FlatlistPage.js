@@ -13,8 +13,8 @@ import {
     FlatList
 } from 'react-native';
 import {SCREEN_WIDTH, SCREEN_HEIGHT} from '../Config/UIConfig';
-//import CustomeListView from '../Components/Component/CustomeListView';
-//import {Loading} from '../Components/Toast/Loading';
+import CustomeListView from '../Components/Component/CustomeListView';
+ import {Loading} from '../Components/Toast/Loading';
 
 let testUntilArray = ['1','2','3','4','5','6','7','8','9','10'];
 
@@ -39,21 +39,21 @@ export default class FlatlistPage extends Component{
     }
 
     componentDidMount(){
-        // this.timer = setTimeout(()=>{
-        //     this.listView.asyncSuccess(testUntilArray,1);
-        // },5000);
+        this.timer = setTimeout(()=>{
+            this.listView.asyncSuccess(testUntilArray,1);
+        },5000);
     }
 
     render(){
         return(
             <View style={styles.container}>
-                {/* <CustomeListView
+                <CustomeListView
                    ref = {(listView) => this.listView = listView}
                    style={styles.flatlistStyle}
                    data={this.state.dataArray}
                    renderItem={({item})=>this.renderTheItem(item)}
                    asyncFunc={(pageNum)=>{this.getTheData(pageNum)}}
-                /> */}
+                />
             </View>
         );
     }
@@ -68,21 +68,21 @@ export default class FlatlistPage extends Component{
     }
 
     /** 数据请求函数 */
-    // getTheData = (pageNum=1) =>{
-    //     let testData = [];
-    //     for(let until in testUntilArray){
-    //         until = pageNum + '----' +until;
-    //         testData.push(until);
-    //     }
+    getTheData = (pageNum=1) =>{
+        let testData = [];
+        for(let until in testUntilArray){
+            until = pageNum + '----' +until;
+            testData.push(until);
+        }
 
-    //     console.log('触发下拉刷新-----请求第'+pageNum+'页数据++++++++++'+testData.length);
-    //     Loading.show();
-    //     this.timer = setTimeout(()=>{
-    //         Loading.hidden();
-    //         console.log('触发下拉刷新-----成功'+pageNum);
-    //         this.listView.asyncSuccess(testData,pageNum);
-    //     },3000);
-    // }
+        console.log('触发下拉刷新-----请求第'+pageNum+'页数据++++++++++'+testData.length);
+        Loading.show();
+        this.timer = setTimeout(()=>{
+            Loading.hidden();
+            console.log('触发下拉刷新-----成功'+pageNum);
+            this.listView.asyncSuccess(testData,pageNum);
+        },3000);
+    }
 }
 
 const styles = StyleSheet.create({

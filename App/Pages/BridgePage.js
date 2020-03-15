@@ -12,7 +12,7 @@ import {
     View,
     Button,
 } from 'react-native';
-//import * as BridgeDemo from '../../AppProject/Functions/NativeBridge/BridgeDemo';
+import * as BridgeDemo from '../Functions/NativeBridge/BridgeDemo';
 
 export default class BridgePage extends Component {
     static navigationOptions = {
@@ -36,7 +36,7 @@ export default class BridgePage extends Component {
     }
 
     componentDidMount(){
-       // const { params } = this.props.navigation.state;
+       const { params } = this.props.route.params;
         
     }
 
@@ -46,7 +46,7 @@ export default class BridgePage extends Component {
                 <Text style={styles.welcome}>
                     {'该部分是react-native对local进行调用的演示案例。通过Bridge可以桥接调用local。\n从而实现对本地数据库、API、三方的调用。并且可以获得返回值。'}
                 </Text>
-                {/* <View style={{marginTop:100,marginLeft:50,marginRight:50,height:60}}>
+                <View style={{marginTop:100,marginLeft:50,marginRight:50,height:60}}>
                 <Button
                     title='click local test Demo' 
                     color='blue'
@@ -65,7 +65,7 @@ export default class BridgePage extends Component {
                     null
                     :
                     <Text>{'callback从local获得的数据\n'+this.state.callBackData}</Text>
-                } */}
+                }
             </View>
         );
     }

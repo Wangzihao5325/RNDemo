@@ -17,6 +17,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* RNDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNDemoTests.m */; };
 		41F27E60764C36F96CE67983 /* libPods-RNDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A0A7EC0E9BB4A8F2EF8066 /* libPods-RNDemo.a */; };
+		801EE20F241E765400B1EDF1 /* BridgeDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 801EE20E241E765400B1EDF1 /* BridgeDemo.m */; };
 		8CA6EF77764ECD959CC229F1 /* libPods-RNDemo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE56339770BC8E2BA34292D2 /* libPods-RNDemo-tvOS.a */; };
 		8F9C27CE901C18A25C472AD7 /* libPods-RNDemo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E0485CF8A3225BF7666E3 /* libPods-RNDemo-tvOSTests.a */; };
 		8FB6EB122E32CFE34ACBE5F1 /* libPods-RNDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B618AF69702E3CEE78127A /* libPods-RNDemoTests.a */; };
@@ -57,6 +58,8 @@
 		32B618AF69702E3CEE78127A /* libPods-RNDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9795EB82EFF52A5A094637 /* Pods-RNDemo-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDemo-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RNDemo-tvOS/Pods-RNDemo-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		55B0860673A1826C159EC361 /* Pods-RNDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RNDemoTests/Pods-RNDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		801EE20D241E765400B1EDF1 /* BridgeDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BridgeDemo.h; path = RNDemo/BridgeModule/BridgeDemo.h; sourceTree = "<group>"; };
+		801EE20E241E765400B1EDF1 /* BridgeDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BridgeDemo.m; path = RNDemo/BridgeModule/BridgeDemo.m; sourceTree = "<group>"; };
 		822B5721EB3F101FF1941890 /* Pods-RNDemo-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDemo-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RNDemo-tvOSTests/Pods-RNDemo-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A0A7EC0E9BB4A8F2EF8066 /* libPods-RNDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD081BB83D1A5036E4225159 /* Pods-RNDemo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDemo-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RNDemo-tvOS/Pods-RNDemo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				801EE20C241E75F400B1EDF1 /* BridgeModule */,
 			);
 			name = RNDemo;
 			sourceTree = "<group>";
@@ -147,6 +151,15 @@
 				32B618AF69702E3CEE78127A /* libPods-RNDemoTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		801EE20C241E75F400B1EDF1 /* BridgeModule */ = {
+			isa = PBXGroup;
+			children = (
+				801EE20D241E765400B1EDF1 /* BridgeDemo.h */,
+				801EE20E241E765400B1EDF1 /* BridgeDemo.m */,
+			);
+			name = BridgeModule;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -194,7 +207,6 @@
 				55B0860673A1826C159EC361 /* Pods-RNDemoTests.debug.xcconfig */,
 				DE67C94E60318ED0DC336310 /* Pods-RNDemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -230,6 +242,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				DBFFC73C87EE4DE6090DD00D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,6 +321,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -453,6 +467,54 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DBFFC73C87EE4DE6090DD00D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNDemo/Pods-RNDemo-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNDemo/Pods-RNDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E216E31E6B4FDF6B0C9F55B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801EE20F241E765400B1EDF1 /* BridgeDemo.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
